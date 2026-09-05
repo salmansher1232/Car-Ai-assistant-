@@ -1,1 +1,3 @@
-
+const CONFIG = {
+  aiEnabled: false
+};
