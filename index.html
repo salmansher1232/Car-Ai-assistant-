@@ -74,31 +74,8 @@ Result will appear here.
 </div>
 </div>
 
-<script>
-function analyzeCar() {
-const model = document.getElementById("carModel").value;
-const auction = Number(document.getElementById("auctionPrice").value);
-const repair = Number(document.getElementById("repairCost").value);
-const selling = Number(document.getElementById("sellingPrice").value);
+<script src="script.js"></script>
 
-const totalCost = auction + repair;
-const profit = selling - totalCost;
-
-let decision = "SKIP ❌";
-
-if (profit > 0) {
-decision = "BUY / CONSIDER ✅";
-}
-
-document.getElementById("result").innerHTML = `
-<h2>${decision}</h2>
-<p><strong>Car:</strong> ${model || "Not entered"}</p>
-<p><strong>Total Cost:</strong> ¥${totalCost.toLocaleString()}</p>
-<p><strong>Expected Sale:</strong> ¥${selling.toLocaleString()}</p>
-<p><strong>Estimated Profit:</strong> ¥${profit.toLocaleString()}</p>
-`;
-}
-</script>
 
 </body>
 </html>
