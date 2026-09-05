@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Car Analysis</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eee;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>🚗 AI Car Analyzer</h1>
+
+  <p>Upload auction sheet or car photo:</p>
+
+  <input
+    type="file"
+    id="carPhoto"
+    accept="image/*"
+  >
+
+  <button onclick="startAnalysis()">
+    ANALYZE PHOTO
+  </button>
+
+  <div id="result">
+    Waiting for photo...
+  </div>
+
+</div>
+
+<script>
+function startAnalysis() {
+
+  const photo = document.getElementById("carPhoto").files[0];
+  const result = document.getElementById("result");
+
+  if (!photo) {
+    result.innerHTML = "❌ Please upload a car photo or auction sheet.";
+    return;
+  }
+
+  result.innerHTML = `
+    <h3>Photo received ✅</h3>
+    <p>AI analysis connection will be added next.</p>
+    <p>File: ${photo.name}</p>
+  `;
+}
+</script>
+
+</body>
+</html>
